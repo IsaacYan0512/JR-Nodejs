@@ -1,0 +1,209 @@
+Chapter 1 HTML
+
+
+1.	HTML 基本结构
+
+<html>
+	<head>
+		<title>My first web page</title>
+	</head>
+	<body>
+		<p>My first web page</p>
+	</body>
+</html>
+
+每个 HTML 文档都应该以 <!DOCTYPE> 声明开始，指定文档类型。紧接着是 <html> 标签，其中包含 <head> 和 <body> 两个主要部分。
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- head 部分 -->
+</head>
+<body>
+    <!-- body 部分 -->
+</body>
+</html>
+
+ 
+
+2.	字符编码： 在 <head> 部分使用 <meta> 标签来设置字符编码，通常为 utf-8。这确保了页面中的文本可以正确地显示多种语言字符。
+
+<head>
+    <meta charset="utf-8">
+    <!-- 其他 head 元素 -->
+</head>
+
+3.	标题与描述： 使用 <title> 标签在 <head> 部分定义页面标题，这将显示在浏览器标签上。同时，使用 <meta> 标签设置页面的描述信息，有助于搜索引擎优化（SEO）。
+
+<head>
+    <title>我的网页</title>
+    <meta name="description" content="这是一个示例网页">
+    <!-- 其他 head 元素 -->
+</head>
+
+4.	段落与标题： 使用 <p> 标签创建段落，使用 <h1> 到 <h6> 标签创建标题，表示从最高级标题到最低级标题。
+
+<p>这是一个段落。</p> （p标签会根据浏览器自动换行）
+<h1>这是一级标题</h1>
+<h2>这是二级标题</h2>
+<br />段落内换行
+<hr />水平线
+<strong>...</strong>加粗（首选，语义化）<b></b>
+<em>...</em>斜体（首选，语义化） <i></i>
+<del>...</del>删除（首选，语义化）<s></s>
+<ins>...</ins>下划线 （首选，语义化）<u></u>
+
+5.	<div>；
+1.  定义和用途： <div> 标签是一个无语义的块级元素（独占一行），它本身不具有特定的语义，但在页面布局和样式化方面具有重要作用。
+	 
+	
+	 
+	2. 基本用法： 使用 <div> 标签创建一个容器，可以在容器内部放置其他 HTML 元素，如文本、图像、列表等。
+	<div>
+    		<p>这是一个位于 div 内部的段落。</p>
+    		<img src="image.jpg" alt="图片">
+</div>
+3. 样式化和布局： <div> 通常用于将相关元素组织在一起，并应用样式或布 局。你可以为 <div> 添加类名或 ID，以便在 CSS 中针对性地应用样式。
+<div class="container">
+    <h1>标题</h1>
+    <p>这是一个带有样式的容器。</p>
+</div>
+4. 分层和嵌套： 可以嵌套多个 <div>，以便更细粒度地组织页面结构。这有助于管理复杂的页面布局。
+<div class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+5. 语义化和可访问性： 尽可能使用语义化的标签来替代 <div>，如 <header>、<footer>、<nav> 等，以提升页面的语义性和可访问性。
+<header>
+    <h1>网站标题</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</nav>
+6.  布局技巧： <div> 在创建复杂布局时很有用，例如使用 <div> 来实现栅格系统、侧边栏、主内容区等。
+<div class="grid-container">
+    <div class="sidebar">
+        <!-- 侧边栏内容 -->
+    </div>
+    <div class="main-content">
+        <!-- 主要内容区域 -->
+    </div>
+</div>
+6.	<span>:
+inline 元素，宽度与内容长度相关
+
+ 
+
+ 
+
+ 
+
+7.	链接与锚点： 使用 <a> 标签创建超链接，通过 href 属性指定链接目标。为了在页面内部创建跳转链接，可以使用锚点，通过设置链接到的元素的 id 属性，并使用 # 符号进行链接。target变量常用_self（当前标签页打开新页面）或_blank（打开新标签页）
+
+<a href="https://www.example.com">访问示例网站</a>
+<a href="#section">跳转到章节</a>
+
+<a href=”页面地址”>
+	<img src=”图片地址” alt=”xxx”>
+</a>
+
+8.	图像： 使用 <img> 标签插入图像，通过 src 属性指定图像文件的路径。添加 alt 属性来提供图像的替代文本，这在图像无法加载时显示或为可访问性提供支持。通常只设置width或Height，否则图像会失真。
+
+<img src="image.jpg" alt="示例图像">
+
+9.	列表： 使用 <ul> 标签创建无序列表，使用 <ol> 标签创建有序列表，使用 <li> 标签为列表项（块元素）。可以嵌套列表以创建更复杂的结构。
+
+<ul>
+    <li>无序列表项1</li>
+    <li>无序列表项2</li>
+</ul>
+
+<ol>
+    <li>有序列表项1</li>
+    <li>有序列表项2</li>
+</ol>
+
+
+10.	表格： 使用 <table> 标签创建表格，使用 <tr> 标签定义表格行，使用 <td> 标签定义表格数据单元。可以使用 <th> 标签定义表头单元格。
+
+<table>
+    <tr>
+        <th>表头1</th>
+        <th>表头2</th>
+    </tr>
+    <tr>
+        <td>数据1</td>
+        <td>数据2</td>
+    </tr>
+</table>
+
+table标签中可以assign多种variable，align，border，width，height，cellspaceing，cellpadding。
+
+td和th中的colspan和rowspan可以合并列或行单元格。
+
+11.	表单： 使用 <form> 标签创建表单，通过不同的输入元素如 <input>、<textarea>、<select> 来收集用户输入。每个输入元素都需要指定 name 属性以便在服务器端进行处理。
+
+<form action=”result.html" method="get ">
+    <label for="name">姓名：</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">邮箱：</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    <br>
+    <input type="submit" value="提交">
+</form>
+
+<input>常用类型：
+ 
+
+12.	 注释： 使用 <!-- 注释内容 --> 格式添加注释，这些注释对于理解代码和协作开  发都非常有用。
+
+<!-- 这是一个注释 -->
+
+13.	样式与脚本链接： 使用 <link> 标签链接外部样式表，使用 <script> 标签链接外部 JavaScript 文件。将这些标签放在文档的 <head> 部分。
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <!-- 其他 head 元素 -->
+</head>
+
+
+14.	语义化： 使用适当的 HTML 标签来表达内容的语义，如使用 <header>、<nav>、<article>、<footer> 等标签。
+
+<header>
+    <h1>网页标题</h1>
+    <nav>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/about">关于我们</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <h2>文章标题</h2>
+    <p>这是一篇示例文章。</p>
+</article>
+<footer>
+    <p>&copy; 2023 示例公司</p>
+</footer>
+
+15.	  
+ 
+
+
+
+
